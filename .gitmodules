@@ -1,6 +1,7 @@
 [submodule "pota"]
 	path = pota
-	url = https://github.com/zpelgrims/pota
+	url = https://github.com/ymesh/pota
+	branch = arnold_7.3
 [submodule "Eigen"]
 	path = Eigen
 	url = https://github.com/eigenteam/eigen-git-mirror.git
@@ -9,4 +10,5 @@
 	url = https://github.com/fmtlib/fmt.git
 [submodule "CryptomatteArnold"]
 	path = CryptomatteArnold
-	url = https://github.com/zpelgrims/CryptomatteArnold.git
+	url = https://github.com/ymesh/CryptomatteArnold.git
+	branch = lentil_patch

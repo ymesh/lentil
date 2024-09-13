@@ -1,3 +1,22 @@
+## About this branch: ymesh_dev
+This branch uses  [ymesh](https://github.com/ymesh) forked modules for [pota](https://github.com/ymesh/pota) (Polynomial optics to Arnold) with fix for Arnold 7.3 and [CryptomatteArnold](https://github.com/ymesh/CryptomatteArnold.git)/
+
+#### Build (Windows)
+Run [build.cmd](build.cmd) in terminal. This will build and install __Lentil__ and __Cryptomatte__ Arnold plugins
+to directory specified in variable __deploy_dir__.
+
+Edit ARNOLD_VERSION and ARNOLD_ROOT in build.cmd according to your Arnold SDK locations.
+```
+set ARNOLD_VERSION=7.3.3.1
+set ARNOLD_ROOT=%libs_dir%/Autodesk/Arnold-%ARNOLD_VERSION%
+```
+#### Usage in Maya/Houdini
+Set environment variable ARNOLD_PLUGIN_PATH to __bin__ folder in __Lentil__ install directory.
+```
+LENTIL_PATH=D:/data/libs/lentil/lentil-v2.5.1-windows-7.3.3.1
+ARNOLD_PLUGIN_PATH=$LENTIL_PATH/bin
+```
+-----
 
 ### There are two components to this project. The first of one is "pota" - short for "Polynomial optics to Arnold". The second one is "polynomial-optics", which is a fork of "Sparse high-degree polynomials for wide-angle lenses" (https://jo.dreggn.org/home/2016_optics.pdf)
 
