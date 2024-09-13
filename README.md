@@ -1,6 +1,12 @@
 ## About this branch: ymesh_dev
 This branch uses  [ymesh](https://github.com/ymesh) forked modules for [pota](https://github.com/ymesh/pota) (Polynomial optics to Arnold) with fix for Arnold 7.3 and [CryptomatteArnold](https://github.com/ymesh/CryptomatteArnold.git).
 
+
+#### Clone with submodules
+```
+git clone --recurse-submodules https://github.com/ymesh/lentil.git
+```
+
 #### Build (Windows)
 Run [build.cmd](build.cmd) in terminal. This will build and install __Lentil__ and __Cryptomatte__ Arnold plugins
 to directory specified in variable __deploy_dir__.
