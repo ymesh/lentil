@@ -1,26 +1,45 @@
 ## About this branch: ymesh_dev
-This branch uses  [ymesh](https://github.com/ymesh) forked modules for [pota](https://github.com/ymesh/pota) (Polynomial optics to Arnold) with fix for Arnold 7.3 and [CryptomatteArnold](https://github.com/ymesh/CryptomatteArnold.git).
+This branch uses  [ymesh](https://github.com/ymesh) forked modules for [pota](https://github.com/ymesh/pota) (Polynomial optics to Arnold) with fix for Arnold 7.3 and [CryptomatteArnold](https://github.com/ymesh/CryptomatteArnold.git) v1.2.3.
 
 
-#### Clone with submodules
+#### Clone this repository with submodules
 ```
 git clone --recurse-submodules https://github.com/ymesh/lentil.git
 ```
 
 #### Build (Windows)
 Run [build.cmd](build.cmd) in terminal. This will build and install __Lentil__ and __Cryptomatte__ Arnold plugins
-to directory specified in variable __deploy_dir__.
+to directory specified in variable *deploy_dir* inside [build.cmd](build.cmd).
 
-Edit ARNOLD_VERSION and ARNOLD_ROOT in build.cmd according to your Arnold SDK locations.
+Edit *ARNOLD_VERSION* and *ARNOLD_ROOT* in [build.cmd](build.cmd) according to your Arnold SDK locations.
 ```
 set ARNOLD_VERSION=7.3.3.1
-set ARNOLD_ROOT=%libs_dir%/Autodesk/Arnold-%ARNOLD_VERSION%
+set ARNOLD_ROOT=<ARNOLD_SDK_PATH>/Arnold-%ARNOLD_VERSION%-windows
 ```
+
+#### Build (Linux)
+Install static libraries for the GNU standard C++ library.
+```
+sudo dnf install libstdc++-static.x86_64
+```
+Run [build.sh](build.sh) in terminal. This will build and install __Lentil__ and __Cryptomatte__ Arnold plugins
+to directory specified in variable *deploy_dir* inside [build.sh](build.sh).
+
+Edit *ARNOLD_VERSION* and *ARNOLD_ROOT* in [build.sh](build.sh) according to your Arnold SDK locations.
+```
+ARNOLD_VERSION=7.3.3.1
+export ARNOLD_ROOT=<ARNOLD_SDK_PATH>/Arnold-${ARNOLD_VERSION}-linux
+```
+
 #### Usage in Maya/Houdini
 Set environment variable ARNOLD_PLUGIN_PATH to __bin__ folder in __Lentil__ install directory.
 ```
-LENTIL_PATH=D:/data/libs/lentil/lentil-v2.5.1-windows-7.3.3.1
-ARNOLD_PLUGIN_PATH=$LENTIL_PATH/bin
+# Windows
+set LENTIL_PATH=<YOUR_INSTALL_PATH>/lentil-v2.5.1-windows-7.3.3.1
+set ARNOLD_PLUGIN_PATH=%LENTIL_PATH%/bin
+# Linux
+LENTIL_PATH=<YOUR_INSTALL_PATH>/lentil-v2.5.1-linux-7.3.3.1
+export ARNOLD_PLUGIN_PATH=${LENTIL_PATH}/bin
 ```
 -----
 
